@@ -8,7 +8,7 @@ const Profile = () => {
 
     const fetchUserProfile = async () => {
         try {
-            const response = await axios.get('/api/profile'); // Adjust the endpoint as necessary
+            const response = await axios.get('/api/profile'); 
             setUserProfile(response.data);
         } catch (err) {
             setError(err.message);
@@ -23,13 +23,13 @@ const Profile = () => {
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
+    if (!userProfile) return <div>No profile data available</div>;
 
     return (
         <div>
             <h1>{userProfile.username}</h1>
             <p>Rating: {userProfile.rating}</p>
             <p>Games Played: {userProfile.gamesPlayed}</p>
-            {/* Add more user profile details as needed */}
         </div>
     );
 };

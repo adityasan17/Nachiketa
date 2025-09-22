@@ -16,6 +16,8 @@ const Tournaments: React.FC = () => {
 
         fetchTournaments();
     }, []);
+    
+    if (!tournament) return <div>No data available</div>;
 
     return (
         <div>
