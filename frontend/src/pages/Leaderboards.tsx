@@ -7,7 +7,7 @@ const Leaderboards: React.FC = () => {
     useEffect(() => {
         const fetchLeaderboard = async () => {
             try {
-                const response = await axios.get('/api/leaderboard');
+                const response = await axios.get('https://lichess.org/api/leaderboard');
                 setLeaderboard(response.data);
             } catch (error) {
                 console.error('Error fetching leaderboard data:', error);

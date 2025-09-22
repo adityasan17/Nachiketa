@@ -7,7 +7,7 @@ const Tournaments: React.FC = () => {
     useEffect(() => {
         const fetchTournaments = async () => {
             try {
-                const response = await axios.get('/api/tournaments');
+                const response = await axios.get('https://lichess.org/api/tournaments');
                 setTournaments(response.data);
             } catch (error) {
                 console.error('Error fetching tournaments:', error);

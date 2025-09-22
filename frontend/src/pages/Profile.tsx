@@ -8,7 +8,7 @@ const Profile = () => {
 
     const fetchUserProfile = async () => {
         try {
-            const response = await axios.get('/api/profile'); 
+            const response = await axios.get('https://lichess.org/api/profile'); 
             setUserProfile(response.data);
         } catch (err) {
             setError(err.message);
